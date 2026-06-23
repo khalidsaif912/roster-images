@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لعبة الأشياء المخفية</title>
+    <meta
+      name="description"
+      content="لعبة عربية تفاعلية للعثور على 12 غرضًا مخفيًا داخل غرفة مرسومة."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero" aria-labelledby="game-title">
+        <p class="eyebrow">تحدي الملاحظة</p>
+        <h1 id="game-title">ابحث عن 12 شيئًا مخفيًا</h1>
+        <p class="intro">
+          اضغط على العناصر داخل الصورة. كل عنصر صحيح سيظهر كأنه مكتشف في القائمة.
+        </p>
+      </section>
+
+      <section class="game-shell" aria-label="لعبة البحث عن الأشياء المخفية">
+        <aside class="panel">
+          <div class="stat-card">
+            <span class="stat-label">التقدم</span>
+            <strong><span id="found-count">0</span> / 12</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">المحاولات</span>
+            <strong id="mistake-count">0</strong>
+          </div>
+          <button id="reset-game" class="reset-button" type="button">إعادة اللعب</button>
+        </aside>
+
+        <div class="board-wrap">
+          <div class="board" id="game-board">
+            <img
+              src="assets/hidden-objects-room.svg"
+              alt="غرفة مليئة بالأثاث والنباتات والعديد من الأشياء المخفية"
+              draggable="false"
+            >
+            <button class="hotspot" style="--x: 15%; --y: 22%; --w: 8%; --h: 6%" data-object="toaster">
+              <span>المحمصة</span>
+            </button>
+            <button class="hotspot" style="--x: 86%; --y: 75%; --w: 9%; --h: 10%" data-object="handbag">
+              <span>الحقيبة</span>
+            </button>
+            <button class="hotspot" style="--x: 28%; --y: 47%; --w: 9%; --h: 8%" data-object="pizza">
+              <span>البيتزا</span>
+            </button>
+            <button class="hotspot" style="--x: 37%; --y: 68%; --w: 11%; --h: 8%" data-object="pouch">
+              <span>الحقيبة الصغيرة</span>
+            </button>
+            <button class="hotspot" style="--x: 86%; --y: 53%; --w: 10%; --h: 8%" data-object="pliers">
+              <span>الزردية</span>
+            </button>
+            <button class="hotspot" style="--x: 64%; --y: 45%; --w: 9%; --h: 6%" data-object="sunglasses">
+              <span>النظارة</span>
+            </button>
+            <button class="hotspot" style="--x: 62%; --y: 20%; --w: 11%; --h: 10%" data-object="boots">
+              <span>الحذاء</span>
+            </button>
+            <button class="hotspot" style="--x: 35%; --y: 37%; --w: 9%; --h: 7%" data-object="folded-towels">
+              <span>المناشف المطوية</span>
+            </button>
+            <button class="hotspot" style="--x: 91%; --y: 45%; --w: 8%; --h: 12%" data-object="mask">
+              <span>القناع</span>
+            </button>
+            <button class="hotspot" style="--x: 94%; --y: 23%; --w: 6%; --h: 12%" data-object="hanging-towel">
+              <span>المنشفة</span>
+            </button>
+            <button class="hotspot" style="--x: 47%; --y: 36%; --w: 8%; --h: 12%" data-object="paper-bag">
+              <span>الكيس الورقي</span>
+            </button>
+            <button class="hotspot" style="--x: 73%; --y: 42%; --w: 9%; --h: 8%" data-object="watermelon">
+              <span>البطيخة</span>
+            </button>
+          </div>
+          <p id="game-message" class="game-message" aria-live="polite">
+            جاهز؟ ابدأ بالبحث داخل الغرفة.
+          </p>
+        </div>
+      </section>
+
+      <section class="targets" aria-labelledby="targets-title">
+        <h2 id="targets-title">قائمة الأشياء المطلوبة</h2>
+        <ol id="target-list" class="target-list">
+          <li data-object="toaster">محمصة خبز</li>
+          <li data-object="handbag">حقيبة يد</li>
+          <li data-object="pizza">بيتزا</li>
+          <li data-object="pouch">حقيبة صغيرة</li>
+          <li data-object="pliers">زردية</li>
+          <li data-object="sunglasses">نظارة شمسية</li>
+          <li data-object="boots">حذاء بني</li>
+          <li data-object="folded-towels">مناشف مطوية</li>
+          <li data-object="mask">قناع</li>
+          <li data-object="hanging-towel">منشفة معلقة</li>
+          <li data-object="paper-bag">كيس ورقي</li>
+          <li data-object="watermelon">بطيخة</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
